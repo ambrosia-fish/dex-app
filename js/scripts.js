@@ -31,8 +31,6 @@ let pokemonRepository = (function () {
     };
 })();
 
-console.log(pokemonRepository.getAll())
-
 pokemonRepository.getAll().forEach(function(pokemon) {
     document.write(pokemon.name + " is " + pokemon.height + " tall.");
         if (pokemon.height > .6)
