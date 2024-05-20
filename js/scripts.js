@@ -36,7 +36,7 @@ document.write("<p>")
 pokemonRepository.getAll().forEach(function(pokemon) {
     document.write(pokemon.name + " is " + pokemon.height + " tall.");
         if (pokemon.height > .6)
-        document.write(" " + "Whoa that is tall!")
+        document.write(" " + "<span class='exclamation'> Whoa that is tall! </span>")
     document.write("<br>")
 })
 document.write("</p>")
