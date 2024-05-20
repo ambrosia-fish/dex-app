@@ -21,8 +21,6 @@ let pokemonRepository = (function () {
         }
     ]
 
-// loop that writes following string to DOM "_____ is _____ tall."
-/* for (let i = 0; i < 3; i++) {
     return {
         getAll: function() {
             return pokemonList;
@@ -33,6 +31,17 @@ let pokemonRepository = (function () {
     };
 })();
 
+/* forEach loop from 2.1.4
+pokemonList.forEach(function(pokemon) {
+    document.write(pokemon.name + " is " + pokemon.height + " tall.");
+        if (pokemon.height > .6)
+        document.write(" " + "Whoa that is tall!")
+    document.write("<br>")
+})
+*/
+
+/* Traditional for loop that writes following string to DOM "_____ is _____ tall." 
+for (let i = 0; i < 3; i++) {
     document.write("<p>")
     document.write(pokemonList[i].pokemonName + " is " + pokemonList[i].height + " tall.")
     // if the pokemon is taller than 0.7 meters, highlight it with message.
@@ -42,6 +51,4 @@ let pokemonRepository = (function () {
     document.write("<br>")
     document.write("</p>")
 }
-*/
-
 */
