@@ -33,16 +33,12 @@ let pokemonRepository = (function () {
 
 console.log(pokemonRepository.getAll())
 
-document.write(pokemonRepository.getAll())
-
-/* forEach loop from 2.1.4
-pokemonList.forEach(function(pokemon) {
+pokemonRepository.getAll().forEach(function(pokemon) {
     document.write(pokemon.name + " is " + pokemon.height + " tall.");
         if (pokemon.height > .6)
         document.write(" " + "Whoa that is tall!")
     document.write("<br>")
 })
-*/
 
 /* Traditional for loop that writes following string to DOM "_____ is _____ tall." 
 for (let i = 0; i < 3; i++) {
