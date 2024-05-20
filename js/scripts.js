@@ -31,12 +31,15 @@ let pokemonRepository = (function () {
     };
 })();
 
+/* forEach function that writes the following string to DOM "_____ is _____ tall. */
+document.write("<p>")
 pokemonRepository.getAll().forEach(function(pokemon) {
     document.write(pokemon.name + " is " + pokemon.height + " tall.");
         if (pokemon.height > .6)
         document.write(" " + "Whoa that is tall!")
     document.write("<br>")
 })
+document.write("</p>")
 
 /* Traditional for loop that writes following string to DOM "_____ is _____ tall." 
 for (let i = 0; i < 3; i++) {
