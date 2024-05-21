@@ -1,5 +1,5 @@
 let pokemonRepository = (function () {
-    let pokemonList = [
+    let pokemonData = [
         {
             name: 'Bulbasaur', 
             height: .71, 
@@ -23,10 +23,10 @@ let pokemonRepository = (function () {
 
     return {
         getAll: function() {
-            return pokemonList;
+            return pokemonData;
         },
         add: function(pokemon) {
-            pokemonList.push(pokemon);
+            pokemonData.push(pokemon);
         }
     };
 })();
