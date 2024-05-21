@@ -35,8 +35,8 @@ let pokemonRepository = (function () {
 document.write("<p>")
 pokemonRepository.getAll().forEach(function(pokemon) {
     document.write(pokemon.name + " is " + pokemon.height + " tall.");
-        if (pokemon.height > .6)
-        document.write(" " + "<span class='exclamation'> Whoa that is tall! </span>")
+        if (pokemon.height > .6) {
+        document.write(" " + "<span class='exclamation'> Whoa that is tall! </span>") }
     document.write("<br>")
 })
 document.write("</p>")
