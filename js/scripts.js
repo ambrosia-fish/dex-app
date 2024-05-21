@@ -25,15 +25,17 @@ let pokemonRepository = (function () {
         let pokemonList = document.querySelector('.pokemon-list');
         let pokemonItem = document.createElement('li');
         let button = document.createElement('button');
-        button.addEventListener('click', showDetails (pokemon));
         button.innerText = pokemon.name;
         button.classList.add('button-class');
         pokemonItem.appendChild(button);
         pokemonList.appendChild(pokemonItem);
+        button.addEventListener("click", function () {
+            showDetails(pokemon);
+          });
     }
 
-    function showDetails (pokemon) {
-        console.log(pokemon.name) 
+    function showDetails (pokemon){
+        console.log(pokemon.name)
     }
 
     return {
@@ -48,7 +50,6 @@ let pokemonRepository = (function () {
     }
 })();
 
-/* forEach function that writes the following string to DOM "_____ is _____ tall. */
 pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon)
 });
