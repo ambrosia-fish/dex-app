@@ -21,6 +21,15 @@ let pokemonRepository = (function () {
         }
     ]
 
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector('.pokemon-list');
+        let pokemonItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('button-class');
+        pokemonItem.appendChild(button);
+        pokemonList.appendChild(pokemonItem);
+    }
     return {
         getAll: function() {
             return pokemonData;
@@ -32,24 +41,4 @@ let pokemonRepository = (function () {
 })();
 
 /* forEach function that writes the following string to DOM "_____ is _____ tall. */
-document.write("<p>")
 pokemonRepository.getAll().forEach(function(pokemon) {
-    document.write(pokemon.name + " is " + pokemon.height + " tall.");
-        if (pokemon.height > .6) {
-        document.write(" " + "<span class='exclamation'> Whoa that is tall! </span>") }
-    document.write("<br>")
-})
-document.write("</p>")
-
-/* Traditional for loop that writes following string to DOM "_____ is _____ tall." 
-for (let i = 0; i < 3; i++) {
-    document.write("<p>")
-    document.write(pokemonList[i].pokemonName + " is " + pokemonList[i].height + " tall.")
-    // if the pokemon is taller than 0.7 meters, highlight it with message.
-    if (pokemonList[i].height > .7)
-        document.write(" Whoa! That is big!")
-    // insert line break
-    document.write("<br>")
-    document.write("</p>")
-}
-*/
