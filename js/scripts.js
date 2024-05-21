@@ -36,9 +36,14 @@ let pokemonRepository = (function () {
         },
         add: function(pokemon) {
             pokemonData.push(pokemon);
-        }
-    };
+        },
+
+        addListItem: addListItem
+    }
 })();
 
 /* forEach function that writes the following string to DOM "_____ is _____ tall. */
 pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon)
+});
+    
