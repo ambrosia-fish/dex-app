@@ -19,10 +19,11 @@ let pokemonRepository = (function () {
           });
         }
 
-    function showDetails (pokemon){
-        console.log(pokemon.name)
     }
 
+    function showDetails (item){
+        console.log(item.name + "'s weight is " + item.weight)
+    }    
     
     return {
         getAll: getAll,
