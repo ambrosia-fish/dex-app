@@ -60,7 +60,8 @@ let pokemonRepository = (function () {
         loadDetails: loadDetails,
         showDetails: showDetails
     }
-})();
+    };
+}());
 
 pokemonRepository.loadList().then (function() {
     pokemonRepository.getAll().forEach(function (pokemon) {
