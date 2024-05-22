@@ -19,8 +19,36 @@ let pokemonRepository = (function () {
           });
         }
 
+    function loadList() {
+        return fetch(apiURL).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            json.results.forEach(function (item) {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.apiURL
+                };
+                add(pokemon);
+            });
+        }).catch(function (e){
+            console.error(e);
+        })
     }
 
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (details) {
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.weight = details.weight;
+            item.types = details.types;
+        }).catch(function (e) {
+            console.error(e);
+        });
+    }
+    
     function showDetails (item){
         console.log(item.name + "'s weight is " + item.weight)
     }    
