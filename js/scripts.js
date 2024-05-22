@@ -49,9 +49,10 @@ let pokemonRepository = (function () {
         });
     }
     
-    function showDetails (item){
-        console.log(item.name + "'s weight is " + item.weight)
-    }    
+    function showDetails (item) {
+        pokemonRepository.loadDetails (item).then(function () {
+            console.log(item.name + " is " + item.height + " meters tall.")
+    })};    
     
     return {
         getAll: getAll,
