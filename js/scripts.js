@@ -1,22 +1,5 @@
 let pokemonRepository = (function () {
-    let pokemonData = [
-        {
-            name: 'Bulbasaur', 
-            height: .71, 
-            type: [
-                'Grass',
-                'Poison',
-            ]  
-        },
-        {
-            name: 'Charmander',
-            height: .60,
-            type: 'Fire',
-        },
-        {
-            name: 'Squirtle',
-            height: .5,
-            type: 'Water',
+    let repository = [];
 
         }
     ]
@@ -42,15 +25,17 @@ let pokemonRepository = (function () {
         getAll: function() {
             return pokemonData;
         },
-        add: function(pokemon) {
-            pokemonData.push(pokemon);
-        },
-
-        addListItem: addListItem
+        getAll: getAll,
+        add: add,
+        loadList: loadList,
+        loadDetails: loadDetails,
+        showDetails: showDetails
     }
 })();
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon)
+pokemonRepository.loadList().then (function() {
+    pokemonRepository.getAll().forEach(function (pokemon) {
+        pokemonRepository.add(pokemon);
+    })
 });
     
