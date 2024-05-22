@@ -1,8 +1,9 @@
 let pokemonRepository = (function () {
     let repository = [];
 
-        }
-    ]
+    function getAll () {
+        return repository;
+    }
 
     function addListItem(pokemon){
         let pokemonList = document.querySelector('.pokemon-list');
