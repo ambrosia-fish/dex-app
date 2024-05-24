@@ -60,10 +60,7 @@ let pokemonRepository = (function () {
 
     /* showDetails function: takes a pokemon object (item) which is passed from add() upon button click, 
        calls loadDetails on the item (pokemon), and then logs the details as a sentence.*/
-    function showDetails (item) {
-        pokemonRepository.loadDetails (item).then(function () {
-            console.log(item.name + " is " + item.height + " meters tall.")
-    })};    
+    function showDetails (item) {};    
     
     /* returns key/value pairs for external access to repository functions s */
     return {
