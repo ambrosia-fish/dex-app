@@ -75,11 +75,6 @@ let pokemonRepository = (function () {
     };
 }());
 
-pokemonRepository.loadList().then (function() {
-    pokemonRepository.getAll().forEach(function (pokemon) {
-        pokemonRepository.add(pokemon);
-    })
-});
 /* calls loadList function on pokemonRepository, load list triggers the add function */
 pokemonRepository.loadList().then (function() {});
     
