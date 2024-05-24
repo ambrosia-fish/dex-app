@@ -27,10 +27,6 @@ let pokemonRepository = (function () {
         })
     }
 
-    /* loadDetails function: takes a pokemon object, fetches/parses JSON pokemon metadata from the profile URL, 
-       and adds detailed data to the pokemon object. Includes a catch function to log any errors. */
-    function loadDetails(item) {
-        let url = item.detailsUrl;
     /* add function: creates button as child of pokemon-list li items. Button event listener to trigger loadDetails function, sends pokemon object*/
     function add (pokemon) {
         let pokemonList = document.querySelector('.pokemon-list');
