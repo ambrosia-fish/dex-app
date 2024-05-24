@@ -61,11 +61,14 @@ let pokemonRepository = (function () {
             showDetails(pokemon);
         });
     }
-    
 
-    /* showDetails function: takes a pokemon object (item) which is passed from add() upon button click, 
-       calls loadDetails on the item (pokemon), and then logs the details as a sentence.*/
-    function showDetails (item) {};    
+    /* showDetails builds out modal in DOM*/
+    function showDetails (pokemon) {
+        console.log(pokemon.name)
+        console.log(bioHeight)
+        console.log(bioWeight)
+        console.log(bioTypes)
+    };    
     
     /* returns key/value pairs for external access to repository functions s */
     return {
