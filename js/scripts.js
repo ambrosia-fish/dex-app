@@ -48,6 +48,7 @@ let pokemonRepository = (function () {
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function (detail) {
+            bioImgUrl = detail.sprites.front_default;
             bioHeight = detail.height;
             bioWeight = detail.weight;
             bioTypes = detail.types;
@@ -60,10 +61,10 @@ let pokemonRepository = (function () {
 
     /* showDetails builds out modal in DOM*/
     function showDetails (pokemon) {
-        console.log(pokemon.name)
-        console.log(bioHeight)
-        console.log(bioWeight)
-        console.log(bioTypes)
+        console.log(pokemon.name + " " + bioImgUrl)
+        console.log("Height: " + bioHeight)
+        console.log("Weight: " + bioWeight)
+        console.log("Type(s): " + bioTypes)
     };    
     
     /* returns key/value pairs for external access to repository functions s */
