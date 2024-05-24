@@ -45,15 +45,20 @@ let pokemonRepository = (function () {
           });
         }
 
+    /* loadDetails takes a pokemon object, fetches/parses JSON pokemon metadata from the profile URL, 
+       and creates four new objects for bio details. Includes a catch function to log any errors. Fires showDetails function. */
+    function loadDetails(pokemon) {
+        let url = pokemon.detailsUrl;
         return fetch(url).then(function (response) {
             return response.json();
-        }).then(function (details) {
-            item.imageUrl = details.sprites.front_default;
-            item.height = details.height;
-            item.weight = details.weight;
-            item.types = details.types;
+        }).then(function (detail) {
+            bioHeight = detail.height;
+            bioWeight = detail.weight;
+            bioTypes = detail.types;
         }).catch(function (e) {
             console.error(e);
+        }).then(function (){
+            showDetails(pokemon);
         });
     }
     
