@@ -9,23 +9,9 @@ let pokemonRepository = (function () {
         return repository;
     }
 
-    /* add function: creates button as child of pokemon-list li items. Event listener to trigger modal containing more details.*/
-    function add (pokemon) {
-        let pokemonList = document.querySelector('.pokemon-list');
-        let listPokemon = document.createElement('li');
-        let button = document.createElement('button');
-        button.innerText = pokemon.name;
-        button.classList.add('button-class');
-        listPokemon.appendChild(button);
-        pokemonList.appendChild(listPokemon);
-        button.addEventListener("click", function () {
-            showDetails(pokemon);
-          });
-        }
-
-    /* loadList function: fetches pokemon JSON data from the API, creates a new pokemon object, and calls the add function. 
-       Includes a catch function to log any errors.*/
-        function loadList() {
+    /* Loadlist function fires immediately via the function outside the IIFE. Pulls data from pokemon API and creates a pokemon object with name
+    and details url. Fires add function. */
+    function loadList(item) {
         return fetch(apiURL).then(function (response) {
             return response.json();
         }).then(function (json) {
