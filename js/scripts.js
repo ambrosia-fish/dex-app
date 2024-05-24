@@ -37,7 +37,7 @@ let pokemonRepository = (function () {
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
         button.addEventListener("click", function () {
-            loadDetails(pokemon)
+            showDetails(pokemon)
           });
         }
 
@@ -55,16 +55,16 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
             console.error(e);
         }).then(function (){
-            showDetails(pokemon);
+            console.log(pokemon.name + " " + bioImgUrl)
+            console.log("Height: " + bioHeight)
+            console.log("Weight: " + bioWeight)
+            console.log("Type(s): " + bioTypes)
         });
     }
 
     /* showDetails builds out modal in DOM*/
     function showDetails (pokemon) {
-        console.log(pokemon.name + " " + bioImgUrl)
-        console.log("Height: " + bioHeight)
-        console.log("Weight: " + bioWeight)
-        console.log("Type(s): " + bioTypes)
+        loadDetails(pokemon);
     };    
     
     /* returns key/value pairs for external access to repository functions s */
