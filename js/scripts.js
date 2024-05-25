@@ -55,10 +55,10 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
             console.error(e);
         }).then(function (){
-            console.log(pokemon.name + " " + bioImgUrl)
-            console.log("Height: " + bioHeight)
-            console.log("Weight: " + bioWeight)
-            console.log("Type(s): " + bioTypes)
+            // console.log(pokemon.name + " " + bioImgUrl)
+            // console.log("Height: " + bioHeight)
+            // console.log("Weight: " + bioWeight)
+            // console.log("Type(s): " + bioTypes)
         });
     }
 
