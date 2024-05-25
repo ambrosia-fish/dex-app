@@ -85,7 +85,8 @@ let pokemonRepository = (function () {
 
             // removes is-visible class
             function closeModal (){
-                modalContainer.classList.remove('is-visible')
+                modal.remove();
+                modalContainer.classList.remove('is-visible');
             }
     
             // add sprite
