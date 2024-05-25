@@ -77,6 +77,11 @@ let pokemonRepository = (function () {
             modalTitle.classList.add('modal-title');
             modalTitle.innerText = pokemon.name;
 
+            // add list containing pokemon details.
+            let modalBio = document.createElement('ul');
+            modalBio.classList.add('modal-list')
+            modalBio.innerText = 'Stats';
+
             // add modal close button
             let modalClose = document.createElement('button');
             modalClose.classList.add('modal-close');
@@ -95,10 +100,6 @@ let pokemonRepository = (function () {
             modal.appendChild(modalSprite);
 
 
-            // add list containing pokemon details.
-            let modalBio = document.createElement('ul');
-            modalBio.classList.add('modal-list')
-            modalBio.innerText = 'Stats';
 
 
             // create li items for each pokemon stat.
