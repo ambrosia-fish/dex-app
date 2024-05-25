@@ -51,14 +51,12 @@ let pokemonRepository = (function () {
             bioImgUrl = detail.sprites.front_default;
             bioHeight = detail.height;
             bioWeight = detail.weight;
-            bioTypes = detail.types;
         }).catch(function (e) {
             console.error(e);
         }).then(function (){
             // console.log(pokemon.name + " " + bioImgUrl)
             // console.log("Height: " + bioHeight)
             // console.log("Weight: " + bioWeight)
-            // console.log("Type(s): " + bioTypes)
         });
     }
 
@@ -109,9 +107,6 @@ let pokemonRepository = (function () {
             let modalWeight = document.createElement('li');
             modalWeight.innerText = 'Weight: ' + bioWeight;
 
-            let modalTypes = document.createElement('li');
-            modalTypes.innerText = 'Types: ' + bioTypes;
-
             // Create Dom Structure
             modalContainer.appendChild(modal);
             modal.appendChild(modalTitle);
@@ -119,7 +114,6 @@ let pokemonRepository = (function () {
             modal.appendChild(modalBio);
             modalBio.appendChild(modalHeight);
             modalBio.appendChild(modalWeight);
-            modalBio.appendChild(modalTypes);
         })
     };    
     
