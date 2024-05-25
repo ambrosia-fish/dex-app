@@ -129,7 +129,6 @@ let pokemonRepository = (function () {
         add: add,
         loadList: loadList,
         loadDetails: loadDetails,
-        showDetails: showDetails
         showDetails: showDetails,
     };
 }());
