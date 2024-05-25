@@ -68,6 +68,21 @@ let pokemonRepository = (function () {
             let modalContainer = document.querySelector('#modal-container');
             modalContainer.classList.add('is-visible');
 
+            modalContainer.addEventListener('click', (e) => {
+                let target = e.target;
+                if (target === modalContainer) {
+                  closeModal();
+                }
+            })
+
+            window.addEventListener('keydown', (e) => {
+                let modalContainer = document.querySelector('#modal-container');
+                if (e.key === 'Escape') {
+                  closeModal();
+                }
+            })
+
+            
             // Create modal div.
             let modal = document.createElement('div');
             modal.classList.add('modal');
