@@ -89,7 +89,9 @@ let pokemonRepository = (function () {
             }
     
             // add sprite
-            // let modalSprite = document.createElement('img')
+            let modalSprite = document.createElement('img')
+            modalSprite.src = bioImgUrl;
+            modal.appendChild(modalSprite);
 
 
             // add list containing pokemon details.
