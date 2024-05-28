@@ -31,9 +31,13 @@ let pokemonRepository = (function () {
     function add (pokemon) {
         let pokemonList = document.querySelector('.pokemon-list');
         let listPokemon = document.createElement('li');
-        let button = document.createElement('button');
+        listPokemon.classList.add('list-group-item');
+        let button = document.createElement('button')
         button.innerText = pokemon.name;
-        button.classList.add('button-class');
+        button.classList.add('btn');
+        button.classList.add('btn-primary');
+        button.setAttribute("data-toggle", "modal")
+        button.setAttribute("data-toggle", "modal")
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
         button.addEventListener("click", function () {
