@@ -58,88 +58,11 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
             console.error(e);
         }).then(function (){
-            // console.log(pokemon.name + " " + bioImgUrl)
-            // console.log("Height: " + bioHeight)
-            // console.log("Weight: " + bioWeight)
-        });
-    }
-
-    /* showDetails builds out modal in DOM*/
     function showDetails (pokemon) {
-        loadDetails(pokemon).then(function (response) {
-
-            // Find modal div in html and add 'is-visible' class
-            let modalContainer = document.querySelector('#modal-container');
-            modalContainer.classList.add('is-visible');
-
-            modalContainer.addEventListener('click', (e) => {
-                let target = e.target;
-                if (target === modalContainer) {
-                  closeModal();
-                }
-            })
-
-            window.addEventListener('keydown', (e) => {
-                let modalContainer = document.querySelector('#modal-container');
-                if (e.key === 'Escape') {
-                  closeModal();
-                }
-            })
-
-            
-            // Create modal div.
-            let modal = document.createElement('div');
-            modal.classList.add('modal');
-
-            // add modal title (pokemon name)
-            let modalTitle = document.createElement('h1');
-            modalTitle.classList.add('modal-title');
             modalTitle.innerText = pokemon.name;
 
-            // add list containing pokemon details.
-            let modalBio = document.createElement('ul');
-            modalBio.classList.add('modal-list')
-            modalBio.innerText = 'Stats';
+    };
 
-            // add modal close button
-            let modalClose = document.createElement('button');
-            modalClose.classList.add('modal-close');
-            modalClose.innerText = "X";
-            modalClose.addEventListener('click', closeModal);
-
-            // removes is-visible class
-            function closeModal (){
-                modal.remove();
-                modalContainer.classList.remove('is-visible');
-            }
-    
-            // add sprite
-            let modalSprite = document.createElement('img')
-            modalSprite.src = bioImgUrl;
-            modal.appendChild(modalSprite);
-
-
-
-
-            // create li items for each pokemon stat.
-            // let modalUrl = document.createElement('li');
-        
-            let modalHeight = document.createElement('li');
-            modalHeight.innerText = 'Height: ' + bioHeight;
- 
-            let modalWeight = document.createElement('li');
-            modalWeight.innerText = 'Weight: ' + bioWeight;
-
-            // Create Dom Structure
-            modalContainer.appendChild(modal);
-            modal.appendChild(modalTitle);
-            modal.appendChild(modalClose);
-            modal.appendChild(modalBio);
-            modalBio.appendChild(modalHeight);
-            modalBio.appendChild(modalWeight);
-        })
-    };    
-    
     /* returns key/value pairs for external access to repository functions s */
     return {
         getAll: getAll,
