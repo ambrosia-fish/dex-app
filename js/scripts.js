@@ -33,7 +33,7 @@ let pokemonRepository = (function () {
         let listPokemon = document.createElement('li');
         listPokemon.classList.add('list-group-item');
         let button = document.createElement('button')
-        button.innerText = pokemon.name;
+        button.innerText = pokemon.name 
         button.classList.add('btn');
         button.classList.add('btn-primary');
         button.setAttribute("data-toggle", "modal")
@@ -58,7 +58,11 @@ let pokemonRepository = (function () {
         }).catch(function (e) {
             console.error(e);
         }).then(function (){
+            let modalTitle = document.querySelector('.modal-title');
             modalTitle.innerText = pokemon.name;
+            let modalBody = document.querySelector('.modal-body');
+            modalBody.innerHTML = "<img src='" + bioImgUrl + "'</img>" + "Height: " + bioHeight + "<br>" + "Weight: " + bioWeight;
+        });
 
     };
 
