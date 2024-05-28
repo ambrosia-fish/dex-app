@@ -46,7 +46,7 @@ let pokemonRepository = (function () {
         }
 
     /* loadDetails takes a pokemon object, fetches/parses JSON pokemon metadata from the profile URL, 
-       and creates four new objects for bio details. Includes a catch function to log any errors. Fires showDetails function. */
+       and creates four new objects for bio details. Includes a catch function to log any errors. */
     function loadDetails(pokemon) {
         let url = pokemon.detailsUrl;
         return fetch(url).then(function (response) {
@@ -61,7 +61,8 @@ let pokemonRepository = (function () {
             let modalTitle = document.querySelector('.modal-title');
             modalTitle.innerText = pokemon.name;
             let modalBody = document.querySelector('.modal-body');
-            modalBody.innerHTML = "<img src='" + bioImgUrl + "'</img>" + "Height: " + bioHeight + "<br>" + "Weight: " + bioWeight;
+            // set the modal's body to include an image of the pokemon (with an alt for screenreaders) along with height and weight
+            modalBody.innerHTML = '<img alt="' + pokemon.name + '" src="' + bioImgUrl + '"</img>' + 'Height: ' + bioHeight + '<br>' + 'Weight: ' + bioWeight;
         });
 
     };
@@ -72,7 +73,6 @@ let pokemonRepository = (function () {
         add: add,
         loadList: loadList,
         loadDetails: loadDetails,
-        // showDetails: showDetails,
     };
 }());
 
