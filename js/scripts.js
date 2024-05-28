@@ -36,8 +36,8 @@ let pokemonRepository = (function () {
         button.innerText = pokemon.name 
         button.classList.add('btn');
         button.classList.add('btn-primary');
-        button.setAttribute("data-toggle", "modal")
-        button.setAttribute("data-toggle", "modal")
+        button.setAttribute("data-toggle", "modal");
+        button.setAttribute('data-target','#exampleModal');
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
         button.addEventListener("click", function () {
