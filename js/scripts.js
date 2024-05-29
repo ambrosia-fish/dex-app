@@ -7,7 +7,7 @@ let pokemonRepository = (function () {
     /* getAll function: returns repository */
     function getAll () {
         return repository;
-    }
+    };
 
     /* Loadlist function fires immediately via the function outside the IIFE. Pulls data from pokemon API and creates a pokemon object with name
     and details url. Fires add function. */
@@ -78,6 +78,6 @@ let pokemonRepository = (function () {
 
 /* calls loadList function on pokemonRepository, load list triggers the add function */
 pokemonRepository.loadList().then (function() {
-    getAll();
+    pokemonRepository.getAll();
 });
     
