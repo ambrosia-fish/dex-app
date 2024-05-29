@@ -62,7 +62,7 @@ let pokemonRepository = (function () {
             modalTitle.innerText = pokemon.name;
             let modalBody = document.querySelector('.modal-body');
             // set the modal's body to include an image of the pokemon (with an alt for screenreaders) along with height and weight
-            modalBody.innerHTML = '<img alt="' + pokemon.name + '" src="' + bioImgUrl + '"</img>' + 'Height: ' + bioHeight + '<br>' + 'Weight: ' + bioWeight;
+            modalBody.innerHTML = '<img alt="' + pokemon.name + '" src="' + bioImgUrl + '"</img><br>' + 'Height: ' + bioHeight + '<br>' + 'Weight: ' + bioWeight;
         });
 
     };
